@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chu vi hình tròn</title>
+</head>
+<body>
+<input id="bankinh" type="text" placeholder="Nhập bán kính">
+<button id="chuvi" onclick="chuvi()" type="submit">Submit</button>
+<p id ="result"></p>
+<script>
+
+     function chuvi () {
+        let bankinh = parseInt(document.getElementById("bankinh").value);
+        let pi = 3.14;
+        let result = pi*bankinh*bankinh;
+        document.getElementById("result").innerHTML ="Chu vi là : " + result;
+        console.log(result);
+
+    }
+</script>
+</body>
+</html>

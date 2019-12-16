@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển độ C sang độ F</title>
+</head>
+<body>
+    <input id="C" type="text" placeholder="Nhập độ C">
+    <button id="F" onclick="F()" type="submit">Submit</button>
+    <p id="result"></p>
+<script>
+
+    function F() {
+        let C = parseInt(document.getElementById("C").value);
+        let result = 9/5*C+32;
+        document.getElementById("result").innerHTML ="Độ F : "+ result;
+        console.log(result);
+
+    }
+
+</script>
+</body>
+</html>

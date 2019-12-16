@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính điểm trung bình</title>
+</head>
+<body>
+    <input id="vatly" type="text" placeholder="Điểm vật lý">
+    <input id="hoahoc" type="text" placeholder="Điểm hóa học">
+    <input id="sinhhoc" type="text" placeholder="Điểm sinh học">
+    <button id="dtb" type="submit">Submit</button>
+    <p id="result"></p>
+    <p id="tong"></p>
+<script>
+    let main = document.getElementById("dtb");
+    main.onclick = function () {
+        let vatly = parseInt(document.getElementById("vatly").value);
+        let hoahoc = parseInt(document.getElementById("hoahoc").value);
+        let sinhhoc = parseInt(document.getElementById("sinhhoc").value);
+
+        let result = (vatly + hoahoc + sinhhoc)/3;
+        let tong = vatly + hoahoc + sinhhoc;
+        document.getElementById("result").innerHTML ="Điểm trung bình là : "+ result;
+        console.log(result);
+        document.getElementById("tong").innerHTML ="Tổng điểm là : " + tong;
+    }
+</script>
+
+</body>
+</html>
