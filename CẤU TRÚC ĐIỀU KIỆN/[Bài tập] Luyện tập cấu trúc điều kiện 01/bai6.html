@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="doanhso"></div>
+<div id="phantram"></div>
+<div id="hoahong"></div>
+<script>
+    let ds= +prompt("Nhập doanh số");
+    let hh1=0.01;
+    let hh2=0.03;
+    let hh3=0.05;
+
+    if(ds>=15000000){
+        document.getElementById("doanhso").innerHTML="Doanh số của bạn : "+ds;
+        document.getElementById("phantram").innerHTML="Phần trăm nhận đươc : 5% ";
+        document.getElementById("hoahong").innerHTML="Hoa hồng nhận được: "+(ds*hh3);
+    }else if(ds>=10000000){
+        document.getElementById("doanhso").innerHTML="Doanh số của bạn : "+ds;
+        document.getElementById("phantram").innerHTML="Phần trăm nhận đươc : 3% ";
+        document.getElementById("hoahong").innerHTML="Hoa hồng nhận được: "+(ds*hh2);
+    }else if(ds>=5000000){
+        document.getElementById("doanhso").innerHTML="Doanh số của bạn : "+ds;
+        document.getElementById("phantram").innerHTML="Phần trăm nhận đươc : 1% ";
+        document.getElementById("hoahong").innerHTML="Hoa hồng nhận được: "+(ds*hh1);
+    }else{
+        document.getElementById("doanhso").innerHTML="Doanh số của bạn : "+ds;
+        document.getElementById("phantram").innerHTML="Bạn chưa đủ doanh số ";
+    }
+
+</script>
+</body>
+</html>

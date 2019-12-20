@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let kt= +prompt("Nhập điểm kiểm tra")
+    let gk= +prompt("Nhập điểm giữa kỳ")
+    let ck= +prompt("Nhập điểm cuối kỳ")
+    let tbm= (kt+gk*2+ck*3)/6
+    console.log(tbm)
+    if(tbm>=8){
+        alert("Bạn đạt loại giỏi")
+    }if(tbm>=6.5){
+        alert("Bạn đạt loại khá")
+    }if(tbm>=4.5){
+        alert("Bạn đạt loại trung bình")
+    }else{
+        alert("Bạn học lực yếu")
+    }
+
+</script>
+</body>
+</html>
