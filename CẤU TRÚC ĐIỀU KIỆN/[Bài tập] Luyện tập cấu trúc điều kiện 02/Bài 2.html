@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input id="met" type="number" placeholder="Nhập số m">
+<button id="submit" type="submit" onclick="submit()">Submit</button>
+<div id="result"></div>
+<script>
+    let m = document.getElementById("met").value;
+    if (m > 0) {
+        function submit() {
+        let ft = m * 3.2808;
+        document.getElementById("result").innerHTML= ft + "ft"    ;
+    }
+    }else{
+        alert("Mời nhập lại");
+        <input id="met" type="number" placeholder="Nhập số m">;
+    }
+
+
+
+    </html>

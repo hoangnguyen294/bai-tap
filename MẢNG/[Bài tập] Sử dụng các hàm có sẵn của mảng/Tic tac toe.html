@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic-tac-toe</title>
+</head>
+<body >
+<h3>Tic-tac-toe</h3>
+<div id="show" >
+    <input type="button" value="Change Value" onclick="changeValue()">
+    <script>
+        let board=[];
+        let data="";
+        let flag=true;
+        hienthibandau();
+        function hienthibandau(){
+            for(let i=0;i<3;i++){
+                board[i]=[".",".","."];
+                for(let j=0;j<3;j++){
+                    data+=board[i][j]+"&nbsp&nbsp&nbsp&nbsp";
+                }
+                data+="<br>";
+            }
+            data += `<br/><input type='button' value='Change Value' onclick='changeValue()'>`;
+            document.getElementById("show").innerHTML=data;
+        }
+
+        function checkNgang()
+        {
+            for(let i = 0; i < 3; i++){
+                if (board[i][0]===board[i][1] &&  board[i][1]===board[i][2]  && board[i][0] === 'x')
+                    return 'x';
+                if (board[i][0]===board[i][1] &&  board[i][1]===board[i][2]  && board[i][0] === 'o')
+                    return 'o';
+            }
+            return '.';
+        }
+        function checkDoc()
+        {
+            for(let i = 0; i < 3; i++){
+                if (board[0][i]===board[1][i] &&  board[1][i]===board[2][i]  && board[0][i] === 'x')
+                    return 'x';
+                if (board[0][i]===board[1][i] &&  board[1][i]===board[2][i]  && board[0][i]  === 'o')
+                    return 'o';
+            }
+            return '.';
+        }
+
+        function checkCheo()
+        {
+            if(board[0][0]===board[1][1] &&  board[1][1]===board[2][2]  && board[1][1] === 'x')
+                return 'x';
+            if(board[0][0]===board[1][1] &&  board[1][1]===board[2][2]  && board[1][1] === 'o')
+                return 'o';
+            if(board[0][2]===board[1][1] &&  board[1][1]===board[2][0]  && board[1][1] === 'x')
+                return 'x';
+            if(board[0][2]===board[1][1] &&  board[1][1]===board[2][0]  && board[1][1] === 'o')
+                return '0';
+            return '.';
+        }
+        function hoa(){
+            let count=0;
+            for(let i=0;i<3;i++){
+                let hoa=board[i].indexOf(".");
+                if(hoa===-1){
+                    count++;
+                }
+            }
+            if(count===3){
+                alert("Hòa !!!");
+            }
+        }
+        function endgame(){
+            if(checkNgang()!="."){
+                alert(checkNgang()+" win");
+            }
+            else if(checkDoc()!="."){
+                alert(checkDoc()+" win");
+            }
+            else if(checkCheo()!="."){
+                alert(checkCheo()+" win");
+            }
+            else hoa();
+        }
+        function changeValue(){
+            let row=parseInt(prompt("Nhập vị trí hàng: "));
+            let col=parseInt(prompt("Nhập vị trí cột: "));
+            if(row>0 && row<=3 && col>0 && col<=3){
+                data="";
+                if(board[row-1][col-1]=="."){
+                    if(flag){
+                        board[row-1][col-1]="x";
+                    }
+                    else{
+                        board[row-1][col-1]="o";
+                    }
+                    flag=!flag;
+                }
+                else{
+                    alert("Vị trí đã nhập trước đó!!!");
+                }
+                for(let i=0;i<3;i++){
+                    for(let j=0;j<3;j++){
+                        data+=board[i][j]+"&nbsp&nbsp&nbsp&nbsp";
+                    }
+                    data+="<br>";
+                }
+                data += "<br/><input type='button' value='Change Value' onclick='changeValue()'>";
+                document.getElementById("show").innerHTML=data;
+                endgame();
+            }
+            else{
+                alert("nhập sai");
+            }
+        }
+    </script>
+</body>
+</html>

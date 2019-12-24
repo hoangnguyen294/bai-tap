@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr=[1,3,10,20,45,77,2,88,80,62];
+    let V=parseInt(prompt("nhập số V: "));
+    let indexV;
+    for(let i=0;i<10;i++){
+        if(arr[i]===V){
+            indexV=i;
+        }
+    }
+    for(let i=indexV;i<10;i++){
+        arr[i]=arr[i+1];
+    }
+    arr.pop();
+    document.write(arr);
+</script>
+</body>
+</html>

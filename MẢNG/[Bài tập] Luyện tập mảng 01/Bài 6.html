@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array=[1,3,10,20,45,77,2,88,80,62];
+    let V = parseInt(prompt("nhập số V: "));
+    let flag=false;
+    for(let arr of array){
+        if(arr===V){
+            flag=true;
+            break;
+        }
+    }
+    if(flag){
+        document.write("V is in the array");
+    }
+    else{
+        document.write("V is not in the array");
+    }
+
+</script>
+</body>
+</html>

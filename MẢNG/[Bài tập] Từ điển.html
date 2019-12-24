@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="timkiem" type="text" placeholder="Nhập từ khóa">
+<button id="ketqua" onclick="ketqua()">Submit</button>
+<div id="result"></div>
+<script>
+    let eng = ["dog","cat","buffalo","mouse","snake","chicken","duck"]
+    let vn = ["con chó","con mèo","con bò","con chuột","con rắn","con gà","con vịt"]
+    let lenghte = eng.length
+   function ketqua() {
+       let timkiem = document.getElementById("timkiem").value;
+       let kt = false
+       for (i = 0; i <= lenghte; i++) {
+           if (eng[i] === timkiem) {
+               kt = true;
+               break;
+           }
+       }
+           if(kt){
+               document.write(vn[i])
+           }else{
+               document.write("không tìm thấy")
+           }
+
+
+   }
+</script>
+</body>
+</html>
