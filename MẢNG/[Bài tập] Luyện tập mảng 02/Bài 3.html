@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //let array = [32,"f",4,76,"g",34,"h",5,"k","g",99];
+    let array = [];
+    let length = parseInt(prompt("Nhập độ dài mảng"))
+    for (i=0 ; i < length ; i++){
+     array.push(prompt("Nhập phần tử thứ "+ (i + 1)))
+    }
+    document.write("array =" + "["+array+ "]" + "</br>")
+
+     let count = 0
+     for (i=0 ; i < array.length; i++){
+             if (isNaN(array[i])){
+                 continue;
+             } else {
+                 count++
+             }
+     }
+
+
+
+        document.write("Số ký tự số trong mảng là :" + count)
+</script>
+</body>
+</html>
