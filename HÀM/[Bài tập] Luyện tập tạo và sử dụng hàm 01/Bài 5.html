@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let name = prompt("Nhập tên ngôi sao")
+    let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let groupstar = ['Ursa Minor','Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    function myStar() {
+        let flag = false;
+        for (i = 0; i < star.length; i++) {
+            if (star[i] === name) {
+                flag = true;
+                break;
+            }
+        }
+            if (flag) {
+            alert(name + " thuộc chòm sao " + groupstar[i]);
+            }
+            else{
+            alert("Không tìm thấy");
+            }
+    }
+        let result = myStar();
+
+</script>
+</body>
+</html>

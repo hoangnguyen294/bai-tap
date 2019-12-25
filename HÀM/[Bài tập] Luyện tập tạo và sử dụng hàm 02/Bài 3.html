@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="num" type="number" placeholder="Nhập số">
+<button type="button" onclick="giaithua()">OK</button>
+<div id="result"></div>
+<script>
+    function giaithua() {
+    let number = +document.getElementById("num").value;
+    let gt = 1;
+    for(i = number; i > 0; i--){
+        gt *= i;
+    }
+    document.getElementById("result").innerHTML= gt;
+    }
+</script>
+</body>
+</html>

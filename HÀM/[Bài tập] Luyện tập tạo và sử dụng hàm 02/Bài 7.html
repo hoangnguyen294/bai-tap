@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhập số thứ nhất");
+    let b = prompt("Nhập số thứ hai");
+    function doicho() {
+        let tmp = a;
+        a = b;
+        b = tmp;
+    }
+    let result = doicho();
+    document.write(a + "--" + b);
+</script>
+</body>
+</html>

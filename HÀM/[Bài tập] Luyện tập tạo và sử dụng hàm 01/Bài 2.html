@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="num" type="number">
+<button type="button" onclick="myFunction()">Result</button>
+<div id="result"></div>
+<script>
+
+    function myFunction() {
+        let number = +document.getElementById("num").value
+        let kq = number + 1
+        document.getElementById("result").innerHTML= "Result " + kq
+    }
+
+
+</script>
+</body>
+</html>

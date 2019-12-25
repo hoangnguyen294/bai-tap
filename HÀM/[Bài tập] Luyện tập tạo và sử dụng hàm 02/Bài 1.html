@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="num" type="number" placeholder="Nhập số">
+<button type="button" onclick="mySquare()">OK</button>
+<div id="rs"></div>
+<script>
+    function mySquare() {
+        let number = +document.getElementById("num").value;
+        let result =  number*number;
+        document.getElementById("rs").innerHTML= "Bình phương của " + number + " là " + result
+    }
+
+</script>
+</body>
+</html>

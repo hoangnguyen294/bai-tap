@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<input id="giatri" type="number">
+<form><b>From</b></form>
+<select id="from">
+    <option value="ft">Feet</option>
+    <option value="m">Meters</option>
+</select>
+<form><b>To</b></form>
+<select id="to">
+    <option value="ft">Feet</option>
+    <option value="m">Meters</option>
+</select>
+<button id="convert" onclick="convert()" type="submit"><b>Convert</b></button>
+<div id="result"></div>
+<script>
+    function convert() {
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let giatri = parseInt(document.getElementById("giatri").value);
+        if (from == "ft" && to == "m") {
+            let met = giatri * 0.305;
+            document.getElementById("result").innerHTML = met + " m";
+        }
+        if (from == "m" && to == "ft") {
+            let feet = 3.279 * giatri;
+            document.getElementById("result").innerHTML = feet + " ft";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1 = prompt("Nhập số thứ nhất");
+    let num2 = prompt("Nhập số thứ hai");
+    let num3 = prompt("Nhập số thứ ba");
+    function sosanh() {
+        if (num1<num2 && num1<num3){
+            alert("Số " + num1 + " là số nhỏ nhất trong 3 số " + num1 + "," + num2 + "," + num3);
+        }
+        else if(num2<num3){
+            alert("Số " + num2 + " là số nhỏ nhất trong 3 số " + num1 + "," + num2 + "," + num3);
+        }
+        else{
+            alert("Số " + num3 + " là số nhỏ nhất trong 3 số " + num1 + "," + num2 + "," + num3);
+        }
+    }
+    let result = sosanh();
+</script>
+</body>
+</html>
