@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Temperature = function (c) {
+        this.c = c;
+        this.getc = function () {
+            return this.c;
+        }
+        this.f = function () {
+            return c * 9/5 + 32;
+        }
+        this.k = function () {
+            return c + 273.1;
+        }
+    }
+    let doc = parseFloat(prompt("Nhập độ C"));
+    let temp = new Temperature(doc);
+    let c = temp.getc ();
+    let f = temp.f();
+    let k = temp.k();
+    document.write('Độ C : ' + c + "</br>" + 'Độ F : ' + f + "</br>" + 'Độ K : ' + k);
+</script>
+</body>
+</html>
