@@ -1,0 +1,251 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/first.css">
+    <style type="text/css">
+        body{
+            background-image: url("images/fix.jpg");
+            background-size: 1500px 700px;
+        }
+    </style>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+        <a class="navbar-brand" href="#"><img src="https://d3j2s6hdd6a7rg.cloudfront.net/v2/JE-469/lfc/images/logo.png" alt="Liverpool FC" width="40" height="50"></a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="firstteam.html">First Team</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="youngteam.html">Young Team</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Transfer</a>
+            </li>
+        </ul>
+    </nav>
+</head>
+<body>
+<h1>First Team</h1>
+<div class="container-fluid">
+    <a href="javascript:void(0);" class="btn btn-success"
+       onclick="first.openModal()">Add Player</a>
+</div>
+
+<div class="container">
+    <div class="row mt-3 table-responsive">
+        <table  class="table table-bordered table-hover table-warning table-striped" id="myTable">
+            <thead>
+            <tr bgcolor="#a52a2a">
+                <th>ID</th>
+                <th>Avatar</th>
+                <th>Full Name</th>
+                <th>Day Of Birth</th>
+                <th>Nation</th>
+                <th>Foot</th>
+                <th>Height (Cm)</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="tbFirst">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- The Modal -->
+<div class="modal" id="addFirst">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Player</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="formAddEditFirst">
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Avatar</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text"
+                                   name="Avatar" id="Avatar"
+                                   data-rule-required=true >
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>FullName</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="FullName" id="FullName"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Day of Birth</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="date" name="DOB" id="DOB"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Nation</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="Nation" id="Nation"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Foot</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="Foot" id="Foot"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Height</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="Height" id="Height"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Position</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="Position" id="Position"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-primary"
+                   onclick="first.save()">Save</a>
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="editFirst">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Player</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="formEditFirst">
+                    <input hidden name="id" id="id">
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Avatar</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text"
+                                   name="Avatar" id="AvatarEdit"
+                                   data-rule-required=true >
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>FullName</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="FullName" id="FullNameEdit"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Day of Birth</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="DOB" id="DOBEdit"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Nation</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="Nation" id="NationEdit"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Foot</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="Foot" id="FootEdit"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Height</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="Height" id="HeightEdit"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label>Position</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="Position" id="PositionEdit"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-primary"
+                   onclick="first.saveEdit()">Save</a>
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+<script src="scripts/libs/node_modules/bootbox/dist/bootbox.min.js" ></script>
+<script src="scripts/first.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+</html>

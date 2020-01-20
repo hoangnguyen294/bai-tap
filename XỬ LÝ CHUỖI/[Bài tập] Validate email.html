@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isEmail(str) {
+        regexp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+        if (regexp.test(str)) {
+            return true;
+        }
+            return false;
+    }
+    let str1 = "a@gmail.com";
+    let str2 = "ab@yahoo.com";
+    let str3 = "abc@hotmail.com";
+    document.write(str1 + "<br>");
+    document.write(isEmail(str1) ? "Email Hợp lệ <br>" : "Email không hợp lệ <br>");
+    document.write(str2 + "<br>");
+    document.write(isEmail(str2) ? "Email Hợp lệ <br>" : "Email không hợp lệ <br>");
+    document.write(str3 + "<br>");
+    document.write(isEmail(str3) ? "Email Hợp lệ <br>" : "Email không hợp lệ <br>");
+    let str4 = "@gmail.com";
+    let str5 = "ab@gmail.";
+    let str6 = "@#abc@gmail.com";
+    document.write(str4 + "<br>");
+    document.write(isEmail(str4) ? "Email Hợp lệ <br>" : "Email không hợp lệ <br>");
+    document.write(str5 + "<br>");
+    document.write(isEmail(str5) ? "Email Hợp lệ <br>" : "Email không hợp lệ <br>");
+    document.write(str6 + "<br>");
+    document.write(isEmail(str6) ? "Email Hợp lệ <br>" : "Email không hợp lệ <br>");
+</script>
+</body>
+</html>

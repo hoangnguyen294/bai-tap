@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate tên của lớp học</title>
+</head>
+<body>
+<input type="text" id="nameClass">
+<input type="button" value="Test" id="test"> <br>
+<br>
+<div id="result"></div>
+<script>
+    function checkNameClass(str){
+        regexp = /^[CAP][0-9]{4}[G-M]$/;
+        if(regexp.test(str)){
+            return true;
+        }
+            return false;
+    }
+    let zipcode;
+    let nameClass = document.getElementById("nameClass");
+    let result = document.getElementById("result");
+    document.getElementById("test").onclick = function() {
+        zipcode = nameClass.value;
+        result.innerHTML = checkNameClass(zipcode) ? "Name Class Hợp lệ <br>" : "Name Class không hợp lệ <br>";
+    }
+
+</script>
+</body>
+</html>

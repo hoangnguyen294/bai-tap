@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>[Bài tập] Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body{
+            background: #c8d8ee;
+        }
+        .wrapper{
+            width: 960px;
+            margin: auto;
+            border: 0;
+            padding: 10px;
+            background: #eef2fb;
+            height: 650px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+            <img id="lamp" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width:100px"><br> <br>
+            <input type="button" value="OFF" class="btn btn btn-success" id="button" style="margin-left: 20px; width: 60px;color: red">
+</div>
+</body>
+<script>
+    class Lamp {
+        constructor() {
+            this.status = false;
+        }
+    }
+    class SwitchButton {
+        constructor() {
+            this.status = false;
+        }
+
+        switchOnOff(lamp) {
+            if (this.status === false) lamp.status = false;
+            if (this.status === true) lamp.status = true;
+        }
+    }
+    window.onload = function(){
+        let lamp = new Lamp();
+        let switchButton = new SwitchButton();
+        let button = document.getElementById("button");
+        button.onclick = function(){
+            if (switchButton.status === false){
+                switchButton.status = true;
+                button.value = "ON";
+                button.style.color = "blue";
+                switchButton.switchOnOff(lamp);
+                let lampHtml = document.getElementById("lamp");
+                lampHtml.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+
+            } else {
+                switchButton.status = false;
+                button.value = "OFF";
+                button.style.color = "red";
+                switchButton.switchOnOff(lamp);
+                let lampHtml = document.getElementById("lamp");
+                lampHtml.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+            }
+        }
+
+    }
+</script>
+</html>

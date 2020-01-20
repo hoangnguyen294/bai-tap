@@ -2,24 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
 <script>
-    let Mobile = function(name, pin, mem1, mem2, mem3 ) {
-        this.pin = pin;
-        this.name = name;
-        this.getName = function () {
-            return this.name;
+
+    let Batrery = function(){
+        this.status = 100;
+
+        this.getStatus = function() {
+            return this.status;
         }
-        this.getPin = function () {
-            return this.pin;
+
+        this.charge = function() {
+            this.status = 100;
         }
-        this.mem1 = mem1;
-        this.mem2 = mem2;
-        this.mem3 = mem3;
+    }
+
+    let Mobie = function(batrery){
+        this.batrery = batrery;
+        this.inboxMessages = [];
+        this.writingMessage = [];
+        this.sentMessage = [];
+        this.status;
+
+        this.checkStatus = function() {
+            return this.status == true;
+        }
+
+        this.receiveMessage = function(message){
+            if(this.checkStatus()){
+                this.inboxMessages.push(message);
+                this.batrery.status--;
+            }
+        }
+
+        this.sentMessage = function(message){
+            if(this.checkStatus()){
+                this.sentMessage.push(message);
+                this.batrery.status--;
+            }
+        }
+
+        this.saveWritingMessage = function(message){
+            if(this.checkStatus()){
+                this.writingMessage.push(message);
+                this.batrery.status--;
+            }
+        }
+
+
+
+        this.setStatus = function(status) {
+            this.status = status;
+        }
+
+        this.turnOn = function(){
+            this.status = true;
+            this.batrery.status--;
+        }
+        this.turnOff = function(){
+            this.status = false;
+            this.batrery.status--;
+        }
+        this.charge = function(){
+            this.batrery.charge();
+        }
+        this.sendMessage = function(message,mobile){
+            if(this.checkStatus()){
+                mobile.receiveMessage(message);
+                this.batrery.status--;
+            }
+        }
+        this.checkMessage = function(){
+            if(this.checkStatus()){
+                this.batrery.status--;
+                return this.inboxMessages.pop();
+            }
+        }
+        this.checkSentMessage = function(){
+            if(this.checkStatus()){
+                return sentMessage.pop();
+                this.batrery.status--;
+            }
+        }
 
     }
+
+    let batrery = new Batrery();
+    let nokia = new Mobie(batrery);
+    let iphone = new Mobie(batrery);
+    iphone.turnOn();
+    nokia.turnOn();
+    nokia.sendMessage('alo alo', iphone);
+    console.log(iphone.checkMessage());
 </script>
 </body>
 </html>
